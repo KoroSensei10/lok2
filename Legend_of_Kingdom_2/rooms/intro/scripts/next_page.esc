@@ -1,0 +1,27 @@
+:look
+# Invisible character writing while animation is proceding
+# change page 
+> [eq page 1]
+	set_global page 2
+	set_active page_1 false
+	say book "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
+	set_active page_2_left true
+	set_active page_2_right true
+	stop
+
+> [eq page 2]
+	set_global page 3
+	set_active page_2_left false
+	set_active page_2_right false
+	say book "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
+	set_active page_3_left true
+	set_active page_3_right true
+	stop
+	
+> [eq page 3]
+	set_global page 4
+	set_active page_3_left false
+	set_active page_3_right false
+	say book "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
+	set_active page_4 true
+	stop
