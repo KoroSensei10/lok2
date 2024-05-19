@@ -22,26 +22,26 @@ var _loaded_languages: Array = []
 onready var settings_changed = false
 
 
-# Initialize the flags
-func _ready() -> void:
-	var _flags_container: HBoxContainer = \
-			$VBoxContainer/MarginContainer/options/flags
-	for child in _flags_container.get_children():
-		_flags_container.remove_child(child)
-		child.queue_free()
-
-	_loaded_languages = []
-
-	for lang in TranslationServer.get_loaded_locales():
-		if not lang in _loaded_languages:
-			_loaded_languages.append(lang)
-			var _lang = TextureRect.new()
-			_lang.texture = load(
-				"res://addons/escoria-core/ui_library" + \
-				"/menus/options/flags/%s.png" % lang
-			)
-			_flags_container.add_child(_lang)
-			_lang.connect("gui_input", self, "_on_language_input", [lang])
+## Initialize the flags
+#func _ready() -> void:
+#	var _flags_container: HBoxContainer = \
+#			$VBoxContainer/MarginContainer/options/flags
+#	for child in _flags_container.get_children():
+#		_flags_container.remove_child(child)
+#		child.queue_free()
+#
+#	_loaded_languages = []
+#
+#	for lang in TranslationServer.get_loaded_locales():
+#		if not lang in _loaded_languages:
+#			_loaded_languages.append(lang)
+#			var _lang = TextureRect.new()
+#			_lang.texture = load(
+#				"res://addons/escoria-core/ui_library" + \
+#				"/menus/options/flags/%s.png" % lang
+#			)
+#			_flags_container.add_child(_lang)
+#			_lang.connect("gui_input", self, "_on_language_input", [lang])
 
 
 # Show the options

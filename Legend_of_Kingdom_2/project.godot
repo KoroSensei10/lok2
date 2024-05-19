@@ -808,8 +808,10 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
 [display]
 
-window/size/width=832
-window/size/height=516
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
@@ -870,7 +872,3 @@ common/drop_mouse_on_gui_input_disabled=true
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

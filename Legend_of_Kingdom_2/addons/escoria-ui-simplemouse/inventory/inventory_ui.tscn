@@ -3,8 +3,8 @@
 [ext_resource path="res://addons/escoria-ui-simplemouse/inventory/inventory_ui.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-ui-simplemouse/images/inventory_bg.png" type="Texture" id=2]
 [ext_resource path="res://addons/escoria-core/ui_library/inventory/esc_inventory_container.gd" type="Script" id=3]
+[ext_resource path="res://assets/raw_res/UI/inventory_icon.png" type="Texture" id=4]
 [ext_resource path="res://addons/escoria-ui-simplemouse/images/frame.png" type="Texture" id=5]
-[ext_resource path="res://addons/escoria-ui-simplemouse/images/inventory_icon.png" type="Texture" id=6]
 
 [node name="inventory_ui" type="Control"]
 anchor_right = 0.4
@@ -30,16 +30,18 @@ __meta__ = {
 
 [node name="inventory_button" type="TextureButton" parent="HBoxContainer"]
 margin_right = 1280.0
-margin_bottom = 900.0
+margin_bottom = 828.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
 expand = true
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="frame" type="TextureRect" parent="HBoxContainer/inventory_button"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -47,9 +49,6 @@ size_flags_vertical = 3
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FloatingInventory" type="CanvasLayer" parent="."]
 
@@ -66,15 +65,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="FloatingInventory/panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 size_flags_vertical = 3
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20

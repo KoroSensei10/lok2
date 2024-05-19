@@ -14,8 +14,12 @@ global_id = "room_test"
 esc_script = "res://rooms/room_test/scripts/room_test.esc"
 
 [node name="Background" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
 mouse_filter = 2
 texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
 script = ExtResource( 3 )
 
 [node name="WalkableArea" type="Navigation2D" parent="."]
