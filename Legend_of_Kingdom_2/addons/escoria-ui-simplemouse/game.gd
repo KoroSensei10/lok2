@@ -404,3 +404,10 @@ func _on_event_done(_return_code: int, _event_name: String):
 
 func _on_MenuButton_pressed() -> void:
 	pause_game()
+
+
+func _on_WikiButton_pressed():
+	# get the scene name from the scene tree and append the wiki link
+	var scene_name = escoria.main.current_scene.name
+	var wiki_link = scene_name.replace(" ", "_")
+	OS.shell_open('https://wiki.lok2.fr?scene=' + wiki_link)
