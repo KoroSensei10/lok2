@@ -105,10 +105,8 @@ margin_bottom = 120.0
 rect_scale = Vector2( 1, 1 )
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource( 8 )]
-visible = false
 
 [node name="main_menu" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
 
 [node name="tooltip_layer" type="CanvasLayer" parent="."]
 layer = 2
