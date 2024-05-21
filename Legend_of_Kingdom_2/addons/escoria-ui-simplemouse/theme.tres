@@ -20,9 +20,6 @@ region_rect = Rect2( 0, 0, 1008, 128 )
 [sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="DynamicFont" id=1]
-size = 44
-use_mipmaps = true
-use_filter = true
 font_data = ExtResource( 1 )
 
 [resource]

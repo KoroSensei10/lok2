@@ -3,11 +3,8 @@
 [ext_resource path="res://addons/escoria-ui-simplemouse/inventory/inventory_ui.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-ui-simplemouse/images/inventory_bg.png" type="Texture" id=2]
 [ext_resource path="res://addons/escoria-core/ui_library/inventory/esc_inventory_container.gd" type="Script" id=3]
-[ext_resource path="res://assets/raw_res/UI/inventory_icon.png" type="Texture" id=4]
-
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/arrow hover.png-ef4c96fabd07e7c45b150cc69c142212.stex"
+[ext_resource path="res://assets/raw_res/UI/arrow.png" type="Texture" id=4]
+[ext_resource path="res://assets/raw_res/UI/arrow hover.png" type="Texture" id=5]
 
 [node name="inventory_ui" type="Control"]
 anchor_right = 0.4
@@ -31,12 +28,12 @@ margin_top = 2.5
 margin_bottom = 2.5
 
 [node name="inventory_button" type="TextureButton" parent="HBoxContainer"]
-margin_right = 1280.0
-margin_bottom = 828.0
+margin_right = 896.0
+margin_bottom = 612.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
-texture_hover = SubResource( 1 )
+texture_hover = ExtResource( 5 )
 expand = true
 stretch_mode = 2
 __meta__ = {

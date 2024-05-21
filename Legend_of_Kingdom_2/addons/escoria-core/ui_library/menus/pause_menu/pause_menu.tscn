@@ -1,10 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/escoria-core/ui_library/menus/pause_menu/pause_menu.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-core/ui_library/menus/options/options.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/escoria-ui-simplemouse/theme.tres" type="Theme" id=3]
 [ext_resource path="res://addons/escoria-core/ui_library/menus/load_save/save/save_game.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/escoria-core/ui_library/menus/load_save/load/load_game.tscn" type="PackedScene" id=5]
+[ext_resource path="res://font/BitPotionExt.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [node name="pause_menu" type="Control"]
 anchor_right = 1.0
@@ -25,19 +40,36 @@ visible = false
 [node name="options" parent="." instance=ExtResource( 2 )]
 visible = false
 
+[node name="quit" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 3.0
+margin_right = 315.0
+margin_bottom = 23.0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.937255, 0.847059, 0.631373, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "X"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -308.0
-margin_right = 308.0
+margin_left = -92.0
+margin_top = -33.0
+margin_right = 84.0
+margin_bottom = 33.0
 custom_constants/separation = 100
 alignment = 1
 
 [node name="menuitems" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 183.0
-margin_right = 616.0
-margin_bottom = 537.0
+margin_top = 77.0
+margin_right = 176.0
+margin_bottom = 169.0
 theme = ExtResource( 3 )
 custom_constants/separation = 10
 __meta__ = {
@@ -45,9 +77,9 @@ __meta__ = {
 }
 
 [node name="continue" type="Button" parent="VBoxContainer/menuitems"]
-margin_right = 616.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 0, 150 )
+margin_right = 176.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
 size_flags_vertical = 3
 text = "Reprendre"
 __meta__ = {
@@ -55,9 +87,9 @@ __meta__ = {
 }
 
 [node name="save_game" type="Button" parent="VBoxContainer/menuitems"]
-margin_top = 160.0
-margin_right = 616.0
-margin_bottom = 201.0
+margin_top = 30.0
+margin_right = 176.0
+margin_bottom = 44.0
 size_flags_vertical = 3
 text = "Sauvegarder"
 __meta__ = {
@@ -65,9 +97,9 @@ __meta__ = {
 }
 
 [node name="load_game" type="Button" parent="VBoxContainer/menuitems"]
-margin_top = 211.0
-margin_right = 616.0
-margin_bottom = 252.0
+margin_top = 54.0
+margin_right = 176.0
+margin_bottom = 68.0
 size_flags_vertical = 3
 text = "Charger"
 __meta__ = {
@@ -75,26 +107,16 @@ __meta__ = {
 }
 
 [node name="options" type="Button" parent="VBoxContainer/menuitems"]
-margin_top = 262.0
-margin_right = 616.0
-margin_bottom = 303.0
+margin_top = 78.0
+margin_right = 176.0
+margin_bottom = 92.0
 text = "Options"
-
-[node name="quit" type="Button" parent="VBoxContainer/menuitems"]
-margin_top = 313.0
-margin_right = 616.0
-margin_bottom = 354.0
-size_flags_vertical = 3
-text = "Quitter"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="back_button_pressed" from="save_game" to="." method="_on_save_game_back_button_pressed"]
 [connection signal="back_button_pressed" from="load_game" to="." method="_on_load_game_back_button_pressed"]
 [connection signal="back_button_pressed" from="options" to="." method="_on_options_back_button_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/menuitems/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/menuitems/save_game" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/menuitems/load_game" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/menuitems/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/menuitems/quit" to="." method="_on_quit_pressed"]
