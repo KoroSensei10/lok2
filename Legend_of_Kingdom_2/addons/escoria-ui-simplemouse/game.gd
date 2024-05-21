@@ -402,5 +402,10 @@ func _on_event_done(_return_code: int, _event_name: String):
 		$tooltip_layer/tooltip.set_target("")
 
 
-func _on_MenuButton_pressed() -> void:
+
+func _on_PauseButton_pressed():
 	pause_game()
+
+
+func _on_WikiButton_pressed():
+	OS.shell_open("https://wiki.lok2.fr/")

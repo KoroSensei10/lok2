@@ -8,10 +8,12 @@ load_path = "res://.import/bouton_long.png-1e42c0c4d13f1b6527844fea73fc4abb.stex
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 1008, 128 )
 modulate_color = Color( 0.937255, 0.717647, 0.458824, 1 )
 
 [sub_resource type="StyleBoxTexture" id=4]
 texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 1008, 128 )
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
