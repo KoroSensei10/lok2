@@ -1,0 +1,4 @@
+:look
+say current_player "C'est une branche"
+set_active branche false
+set_active pierre_magique true
