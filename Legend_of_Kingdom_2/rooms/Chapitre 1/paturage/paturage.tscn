@@ -124,6 +124,7 @@ shape = SubResource( 7 )
 [node name="Mouton 6" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
 script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 1/paturage/scripts/mouton_6.esc"
 combine_when_selected_action_is_in = [  ]
 animations = null
 
