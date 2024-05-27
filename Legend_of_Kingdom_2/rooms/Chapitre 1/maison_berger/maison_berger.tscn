@@ -38,10 +38,14 @@ script = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
-visible = false
 navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="voyageur" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 240, 180 )
+esc_script = "res://rooms/Chapitre 1/maison_berger/scripts/voyageur.esc"
+dialog_color = Color( 0.917647, 0.705882, 0.0705882, 1 )
 
 [node name="Exit paturage" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -83,8 +87,3 @@ position = Vector2( 160, 90 )
 script = ExtResource( 5 )
 global_id = "maison_berger_start_pos"
 is_start_location = true
-
-[node name="voyageur" parent="." instance=ExtResource( 8 )]
-position = Vector2( 240, 180 )
-esc_script = "res://rooms/Chapitre 1/maison_berger/scripts/voyageur.esc"
-dialog_color = Color( 0.0431373, 0.439216, 0.94902, 1 )

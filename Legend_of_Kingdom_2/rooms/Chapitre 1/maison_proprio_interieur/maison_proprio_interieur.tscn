@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
+[ext_resource path="res://assets/raw_res/backgrounds/interieur maison proprio.png" type="Texture" id=6]
+[ext_resource path="res://rooms/Chapitre 1/maison_proprio_interieur/tiroir.tscn" type="PackedScene" id=7]
+[ext_resource path="res://rooms/Chapitre 1/maison_proprio_interieur/cle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -7, -6, 331, -7, 329, 188, -9, 187 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -7, -6, 331, -7, 329, 188, -9, 187 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 172.5, 9.5 )
+
+[node name="maison_proprio_interieur" type="Node2D"]
+script = ExtResource( 1 )
+global_id = "maison_proprio_interieur"
+esc_script = "res://rooms/Chapitre 1/maison_proprio_interieur/scripts/maison_proprio_interieur.esc"
+player_scene = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 6 )
+script = ExtResource( 3 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="tiroir ouvert" parent="RoomObjects" instance=ExtResource( 7 )]
+position = Vector2( 161, 90 )
+global_id = "tiroir_ouvert"
+
+[node name="cle" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 163, 89 )
+esc_script = "res://rooms/Chapitre 1/maison_proprio_interieur/scripts/cle.esc"
+tooltip_name = ""
+
+[node name="tiroir fermé" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+visible = false
+script = ExtResource( 9 )
+global_id = "tiroir_ferme"
+esc_script = "res://rooms/Chapitre 1/maison_proprio_interieur/scripts/tiroir_ferme.esc"
+tooltip_name = "tiroir ferme"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/tiroir fermé"]
+polygon = PoolVector2Array( 50, 126, 77, 115, 77, 127, 51, 139 )
+
+[node name="Exit dehors" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 9 )
+esc_script = "res://rooms/Chapitre 1/maison_proprio_interieur/scripts/exit_dehors.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit dehors"]
+position = Vector2( 163, 171.5 )
+shape = SubResource( 2 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+script = ExtResource( 2 )
+global_id = "maison_proprio_interieur_start_pos"
+is_start_location = true

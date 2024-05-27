@@ -1,0 +1,4 @@
+:look
+set_active tiroir_ouvert true
+set_active cle true
+set_interactive tiroir_ferme false

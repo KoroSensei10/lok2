@@ -1,2 +1,2 @@
 :look
-change_scene "res://rooms/Chapitre 1/marche/marche.tscn" [!exit_locked]
+change_scene "res://rooms/Chapitre 1/vue_chateau/vue_chateau.tscn" [!exit_locked]

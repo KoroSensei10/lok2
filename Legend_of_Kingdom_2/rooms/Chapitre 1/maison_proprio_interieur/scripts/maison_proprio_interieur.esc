@@ -1,0 +1,18 @@
+:setup
+
+	
+# Disable cle and tiroir ouvert
+> [!i/cle]
+	set_active tiroir_ouvert false
+	set_active cle false
+
+> [i/cle]
+	set_active tiroir_ouvert true
+	set_active cle false	
+	
+
+:ready
+
+
+
+
