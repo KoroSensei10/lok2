@@ -1,0 +1,13 @@
+:look
+# Si le joueur a la clé et knock_count est égal à 4
+> [knock_count_bool]
+	set_active muraille_ouverte true
+	set_interactive serrure_avec_cle false
+	set_interactive porte false
+	say current_player "C'est ouvert !"
+	stop
+	  
+> [!knock_count_bool]
+	say current_player "Bizarre, la serrure ne fonctionne pas."
+	stop
+

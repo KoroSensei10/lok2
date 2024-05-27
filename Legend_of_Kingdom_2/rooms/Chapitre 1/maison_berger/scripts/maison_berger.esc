@@ -1,0 +1,8 @@
+
+
+:setup
+
+set_global voyageur_dialog 0
+set_global exit_foret_locked true
+:ready
+

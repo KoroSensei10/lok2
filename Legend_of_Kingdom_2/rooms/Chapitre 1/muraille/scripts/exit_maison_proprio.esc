@@ -1,0 +1,5 @@
+:look
+> [!maison_proprio_visited]
+	say current_player "Allons voir par ici."
+	set_global maison_proprio_visited true
+change_scene "res://rooms/Chapitre 1/maison_proprio/maison_proprio.tscn"

@@ -1,0 +1,16 @@
+
+:setup
+
+set_global hide_pierre_magique true
+set_global remove_racine false
+set_active pierre_magique false
+set_global exit_locked true
+
+# Disable pierre_magique item if present in the inventory
+> [i/pierre_magique]
+	set_active pierre_magique false
+	set_active racine false
+
+:ready
+
+

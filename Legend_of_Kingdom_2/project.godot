@@ -808,8 +808,12 @@ escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
 [display]
 
-window/size/width=832
-window/size/height=516
+window/size/width=320
+window/size/height=180
+window/size/test_width=640
+window/size/test_height=360
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
@@ -840,7 +844,7 @@ debug/room_selector_room_dir=""
 debug/enable_hover_stack_viewer=false
 ui/default_dialog_type="floating"
 ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
-ui/inventory_items_path="res://game/items/inventory/"
+ui/inventory_items_path="res://rooms/Chapitre 1/muraille"
 ui/default_transition="curtain"
 ui/transition_paths=[ "res://addons/escoria-core/game/scenes/transitions/shaders/" ]
 ui/inventory_item_size=Vector2( 72, 72 )
@@ -861,7 +865,7 @@ dialog_simple/clear_text_by_click_only=false
 dialog_simple/reading_speed_in_wpm=200
 dialog_simple/left_click_action="Speed up"
 dialog_simple/stop_talking_animation_on="End of audio"
-wizard/path_to_rooms="res://rooms"
+wizard/path_to_rooms="res://rooms/Chapitre 1"
 
 [gui]
 
@@ -873,4 +877,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+2d/snapping/use_gpu_pixel_snap=true

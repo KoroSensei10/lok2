@@ -1,0 +1,113 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
+[ext_resource path="res://assets/raw_res/backgrounds/muraille.png" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+[ext_resource path="res://rooms/Chapitre 1/muraille/muraille_ouverte.tscn" type="PackedScene" id=8]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -13, -9, 331, -12, 331, 194, -11, 193 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -13, -9, 331, -12, 331, 194, -11, 193 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 96 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 25.5, 94 )
+
+[node name="muraille" type="Node2D"]
+script = ExtResource( 1 )
+global_id = "muraille"
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/muraille.esc"
+player_scene = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 6 )
+script = ExtResource( 3 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="porte" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+global_id = "porte"
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/porte.esc"
+tooltip_name = "Porte"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/porte"]
+visible = false
+polygon = PoolVector2Array( 129, 144, 180, 147, 181, 63, 174, 47, 161, 38, 148, 38, 137, 44, 131, 54, 130, 63 )
+
+[node name="Exit maison proprio" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/exit_maison_proprio.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit maison proprio"]
+visible = false
+position = Vector2( 20, 91 )
+shape = SubResource( 2 )
+
+[node name="Serrure sans cle" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+z_index = 8
+script = ExtResource( 7 )
+global_id = "serrure_sans_cle"
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/serrure_sans_cle.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Serrure sans cle"]
+visible = false
+polygon = PoolVector2Array( 159, 91, 166, 94, 166, 105, 157, 105, 154, 95 )
+
+[node name="Serrure avec cle" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+z_index = 8
+script = ExtResource( 7 )
+global_id = "serrure_avec_cle"
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/serrure_avec_cle.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Serrure avec cle"]
+visible = false
+polygon = PoolVector2Array( 153, 95, 159, 90, 167, 94, 167, 105, 156, 105 )
+
+[node name="muraille_ouverte" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 160, 90 )
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/muraille_ouverte.esc"
+tooltip_name = ""
+
+[node name="Exit exterieur muraille" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 1/muraille/scripts/exit_exterieur_muraille.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit exterieur muraille"]
+position = Vector2( 298, 90 )
+shape = SubResource( 3 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+script = ExtResource( 2 )
+global_id = "muraille_start_pos"
+is_start_location = true

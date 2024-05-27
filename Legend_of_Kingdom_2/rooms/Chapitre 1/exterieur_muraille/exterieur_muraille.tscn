@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
+[ext_resource path="res://assets/raw_res/backgrounds/exterieur.png" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -11, -9, 329, -12, 330, 187, -12, 190 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -11, -9, 329, -12, 330, 187, -12, 190 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 39.5, 98.5 )
+
+[node name="exterieur_muraille" type="Node2D"]
+script = ExtResource( 1 )
+global_id = "exterieur_muraille"
+esc_script = "res://rooms/Chapitre 1/exterieur_muraille/scripts/exterieur_muraille.esc"
+player_scene = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 6 )
+script = ExtResource( 3 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="Exit muraille" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 1/exterieur_muraille/scripts/exit_muraille.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit muraille"]
+position = Vector2( 29.5, 88.5 )
+shape = SubResource( 2 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+script = ExtResource( 2 )
+global_id = "exterieur_muraille_start_pos"
+is_start_location = true

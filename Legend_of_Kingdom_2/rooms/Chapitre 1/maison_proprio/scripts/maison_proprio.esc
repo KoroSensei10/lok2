@@ -1,0 +1,13 @@
+
+:setup
+
+> [!room_visited]
+	set_global room_visited false
+	
+
+:ready
+
+> [!room_visited]
+	say current_player "A qui appartient cette maison ?"
+	set_global room_visited true
+

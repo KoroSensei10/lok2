@@ -1,0 +1,16 @@
+:look
+
+# Si le joueur n'a pas la clé
+> [!i/cle]
+	say current_player "Il faut trouver la clé !"
+	stop
+
+# Si le joueur a la clé et knock_count est égal à 4
+> [i/cle & knock_count_bool]
+	  say current_player "C'est ouvert !"
+	  stop
+	  
+> [i/cle & !knock_count_bool]
+	  say current_player "Bizarre, la serrure ne fonctionne pas."
+	  stop
+

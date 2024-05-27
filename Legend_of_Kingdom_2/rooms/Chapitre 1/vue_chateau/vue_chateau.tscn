@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
+[ext_resource path="res://assets/raw_res/backgrounds/menu.png" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -13, -11, 331, -8, 326, 188, -9, 190 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -13, -11, 331, -8, 326, 188, -9, 190 ) ]
+
+[node name="vue_chateau" type="Node2D"]
+script = ExtResource( 1 )
+global_id = "vue_chateau"
+esc_script = "res://rooms/Chapitre 1/vue_chateau/scripts/vue_chateau.esc"
+player_scene = ExtResource( 5 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 6 )
+script = ExtResource( 3 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="Chateau" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 1/vue_chateau/scripts/chateau.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Chateau"]
+polygon = PoolVector2Array( 282, 86, 282, 59, 289, 51, 288, 27, 279, 25, 271, 2, 260, 28, 251, 34, 245, 48, 244, 87 )
+
+[node name="Exit marche" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 1/vue_chateau/scripts/exit_marche.esc"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Exit marche"]
+polygon = PoolVector2Array( 64, 128, 229, 90, 290, 86, 319, 92, 319, 178, 253, 179, 172, 157, 135, 152, 102, 143, 72, 140 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+script = ExtResource( 2 )
+global_id = "vue_chateau_start_pos"
+is_start_location = true

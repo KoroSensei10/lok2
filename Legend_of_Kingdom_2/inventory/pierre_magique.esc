@@ -1,0 +1,5 @@
+:look
+say current_player "C'est la pierre magique !"
+# ajout de la pierre à l'inventaire
+inventory_add pierre_magique
+set_active pierre_magique false

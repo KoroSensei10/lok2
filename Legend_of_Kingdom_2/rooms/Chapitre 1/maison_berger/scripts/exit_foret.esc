@@ -1,0 +1,2 @@
+:look
+change_scene "res://rooms/Chapitre 1/foret/foret.tscn" [!exit_foret_locked]

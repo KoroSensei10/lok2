@@ -1,0 +1,10 @@
+
+
+:setup
+
+
+:ready
+
+> [!room1_visited]
+	say current_player "C'est le château !"
+

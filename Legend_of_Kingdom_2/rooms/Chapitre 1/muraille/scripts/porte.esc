@@ -1,0 +1,27 @@
+:look
+> [eq knock_count 0]
+	say current_player "Il y a quelqu'un ?"
+	set_global knock_count 1	
+	stop
+
+> [eq knock_count 1]
+	say current_player "Pouvez-vous m'ouvrir ?"
+	set_global knock_count 2
+	stop
+	
+> [eq knock_count 2]
+	say current_player "Il faut trouver une autre solution."
+	set_global knock_count 3
+	stop
+	
+> [eq knock_count 3]
+	say current_player "Ce chateau est vide ?!"
+	set_global knock_count 4
+	stop
+	
+> [eq knock_count 4]
+	say current_player "Comment ouvrir cette porte ???"
+	set_global knock_count_bool true
+	stop
+
+	

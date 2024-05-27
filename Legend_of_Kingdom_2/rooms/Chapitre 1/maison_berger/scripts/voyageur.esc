@@ -1,0 +1,19 @@
+:look
+> [eq voyageur_dialog 0]
+	say current_player "Bonjour, que faites vous chez moi ?"
+	say voyageur "Je suis venu vous annocer une grande nouvelle !"
+	say voyageur "Vous êtes le héros qui doit sauver le monde."
+	say current_player "Comment faire ?"
+	say voyageur "Il faut trouver la pierre magique et la placer au sommet de la tour."
+	
+	set_global voyageur_dialog 1
+	set_global exit_foret_locked false
+	stop
+
+	
+> [eq voyageur_dialog 1]
+	say current_player "Où allez ?"
+	say voyageur "Je te conseille d'aller voir la forêt."
+	
+
+

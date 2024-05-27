@@ -1,0 +1,5 @@
+:look
+> [!exterieur_muraille_visited]
+	say current_player "Il peut avoir quelque d'intéressant par là."
+	set_global exterieur_muraille_visited true
+change_scene "res://rooms/Chapitre 1/exterieur_muraille/exterieur_muraille.tscn"
