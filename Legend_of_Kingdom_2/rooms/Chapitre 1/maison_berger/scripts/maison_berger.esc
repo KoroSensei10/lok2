@@ -2,7 +2,11 @@
 
 :setup
 
-set_global voyageur_dialog 0
-set_global exit_foret_locked true
+> [!maison_berger_visited]
+	set_global maison_berger_visited true
+	set_global voyageur_dialog 0
+	set_global exit_foret_locked true
+	
+
 :ready
 

@@ -1,0 +1,34 @@
+:look
+
+> [eq page 1]
+	set_active page_1 false
+	say book_intro "‎ ‎ ‎ ‎ ‎‎ ‎‎ ‎"
+	set_active page_2 true
+	set_global page 2
+	stop
+> [eq page 2]
+	set_active page_2 false
+	say book_intro "‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎"
+	set_active page_3 true
+	set_global page 3
+	stop
+> [eq page 3]
+	set_active page_3 false
+	say book_intro "‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎"
+	set_active page_4 true
+	set_global page 4
+	stop
+> [eq page 4]
+	set_active page_4 false
+	say book_intro "‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎"
+	set_active page_5 true
+	set_global page 5
+	stop
+> [eq page 5]
+	set_active page_5 false
+	say book_intro "‎ ‎ ‎ ‎ ‎‎ ‎ ‎ ‎ ‎"
+	set_active page_6 true
+	set_global page 6
+	stop
+> [eq page 6]
+	change_scene "res://rooms/Chapitre 1/paturage/paturage.tscn"

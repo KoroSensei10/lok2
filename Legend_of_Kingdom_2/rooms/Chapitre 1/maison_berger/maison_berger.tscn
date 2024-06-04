@@ -45,7 +45,8 @@ navpoly = SubResource( 1 )
 [node name="voyageur" parent="RoomObjects" instance=ExtResource( 8 )]
 position = Vector2( 240, 180 )
 esc_script = "res://rooms/Chapitre 1/maison_berger/scripts/voyageur.esc"
-dialog_color = Color( 0.917647, 0.705882, 0.0705882, 1 )
+tooltip_name = "Parler"
+dialog_color = Color( 0.560784, 0.0784314, 0.0196078, 1 )
 
 [node name="Exit paturage" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -64,6 +65,7 @@ shape = SubResource( 2 )
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/maison_berger/scripts/exit_interieur.esc"
+tooltip_name = "Rentrer"
 combine_when_selected_action_is_in = [  ]
 animations = null
 

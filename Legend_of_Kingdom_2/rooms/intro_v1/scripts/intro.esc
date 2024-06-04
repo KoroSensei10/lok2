@@ -1,0 +1,25 @@
+
+
+:setup
+
+> [!room1_visited]
+	set_global start_game false
+	set_global page 1
+
+	set_active page_1 true
+	set_active page_2_left false
+	set_active page_2_right false
+	set_active page_3_left false
+	set_active page_3_right false
+	set_active page_4_left false
+	set_active page_4_right false
+
+	
+
+	
+	
+:ready
+
+
+
+

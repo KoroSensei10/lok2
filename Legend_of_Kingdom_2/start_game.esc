@@ -2,4 +2,4 @@
 show_menu main
 
 :newgame
-change_scene "res://rooms/Chapitre 1/paturage/paturage.tscn"
+change_scene "res://rooms/intro/intro.tscn"

@@ -1,7 +1,11 @@
 :look
 set_active racine false
 set_active pierre_magique true
-say lapin "‎ ‎ ‎ ‎ ‎‎  "
-#walk_to_pos_block lapin 100 100 true
-set_active lapin false
+
+#walk_to_pos lapin 45 150
+walk_to_pos lapin2 0 100
+
+#say lapin "‎ ‎ ‎ ‎ ‎‎"
+
+#set_active lapin2 false
 set_global exit_locked false

@@ -23,5 +23,6 @@
 	set_active page_3_left false
 	set_active page_3_right false
 	say book "‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ "
-	set_active page_4 true
+	set_active page_4_left true
+	set_active page_4_right true
 	stop

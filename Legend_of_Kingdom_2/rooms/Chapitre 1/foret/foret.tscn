@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=1]
 [ext_resource path="res://assets/raw_res/backgrounds/foret.png" type="Texture" id=2]
@@ -10,14 +10,15 @@
 [ext_resource path="res://inventory/pierre_magique.tscn" type="PackedScene" id=8]
 [ext_resource path="res://rooms/Chapitre 1/foret/objects/racine.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=10]
+[ext_resource path="res://characters/lapin2.scn" type="PackedScene" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( -7, -6, 327, -8, 327, 184, -9, 186 )
+vertices = PoolVector2Array( -381, -253, 710, -269, 697, 481, -438, 460 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
-outlines = [ PoolVector2Array( -7, -6, 327, -8, 327, 184, -9, 186 ) ]
+outlines = [ PoolVector2Array( -381, -253, 710, -269, 697, 481, -438, 460 ) ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.5, 90.5 )
+extents = Vector2( 15.25, 92 )
 
 [node name="foret" type="Node2D"]
 script = ExtResource( 4 )
@@ -31,27 +32,31 @@ texture = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="WalkableArea" type="Navigation2D" parent="."]
-visible = false
 script = ExtResource( 6 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+visible = false
 navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
 
 [node name="lapin" parent="RoomObjects" instance=ExtResource( 7 )]
-position = Vector2( 38, 126 )
-
-[node name="racine" parent="RoomObjects" instance=ExtResource( 9 )]
-position = Vector2( 39, 69 )
-priority = 5.0
-esc_script = "res://rooms/Chapitre 1/foret/scripts/racine.esc"
+position = Vector2( 155, 79 )
+tooltip_name = ""
 
 [node name="pierre_magique" parent="RoomObjects" instance=ExtResource( 8 )]
 position = Vector2( 131, 73 )
 scale = Vector2( 0.5, 0.5 )
 priority = 2.0
 esc_script = "res://inventory/pierre_magique.esc"
+tooltip_name = "Pierre Magique"
+
+[node name="racine" parent="RoomObjects" instance=ExtResource( 9 )]
+position = Vector2( 39, 69 )
+z_index = 1
+priority = 5.0
+esc_script = "res://rooms/Chapitre 1/foret/scripts/racine.esc"
+tooltip_name = "Enlever"
 
 [node name="ESCItem" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
@@ -61,8 +66,11 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCItem"]
-position = Vector2( 312, 89.5 )
+position = Vector2( 304.25, 91 )
 shape = SubResource( 2 )
+
+[node name="lapin2" parent="RoomObjects" instance=ExtResource( 11 )]
+position = Vector2( 148, 102 )
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 38, 166 )

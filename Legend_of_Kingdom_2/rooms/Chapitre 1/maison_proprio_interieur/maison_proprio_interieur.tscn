@@ -48,11 +48,10 @@ tooltip_name = ""
 
 [node name="tiroir fermé" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
-visible = false
 script = ExtResource( 9 )
 global_id = "tiroir_ferme"
 esc_script = "res://rooms/Chapitre 1/maison_proprio_interieur/scripts/tiroir_ferme.esc"
-tooltip_name = "tiroir ferme"
+tooltip_name = "Ouvrir"
 combine_when_selected_action_is_in = [  ]
 animations = null
 
@@ -63,6 +62,7 @@ polygon = PoolVector2Array( 50, 126, 77, 115, 77, 127, 51, 139 )
 pause_mode = 1
 script = ExtResource( 9 )
 esc_script = "res://rooms/Chapitre 1/maison_proprio_interieur/scripts/exit_dehors.esc"
+tooltip_name = "Sortir"
 combine_when_selected_action_is_in = [  ]
 animations = null
 
@@ -71,7 +71,7 @@ position = Vector2( 163, 171.5 )
 shape = SubResource( 2 )
 
 [node name="StartPos" type="Position2D" parent="."]
-position = Vector2( 160, 90 )
+position = Vector2( 222, 114 )
 script = ExtResource( 2 )
 global_id = "maison_proprio_interieur_start_pos"
 is_start_location = true

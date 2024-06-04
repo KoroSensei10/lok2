@@ -39,6 +39,7 @@ navpoly = SubResource( 1 )
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/exterieur_muraille/scripts/exit_muraille.esc"
+tooltip_name = "Revenir"
 combine_when_selected_action_is_in = [  ]
 animations = null
 

@@ -5,7 +5,7 @@
 [ext_resource path="res://addons/escoria-ui-simplemouse/theme.tres" type="Theme" id=3]
 [ext_resource path="res://addons/escoria-core/ui_library/menus/load_save/save/save_game.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/escoria-core/ui_library/menus/load_save/load/load_game.tscn" type="PackedScene" id=5]
-[ext_resource path="res://font/BitPotionExt.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://rooms/BitPotionExt.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12

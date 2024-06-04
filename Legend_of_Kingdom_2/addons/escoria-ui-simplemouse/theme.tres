@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=8 format=2]
 
-[ext_resource path="res://font/BitPotionExt.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://rooms/BitPotionExt.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="StreamTexture" id=3]
 flags = 4
