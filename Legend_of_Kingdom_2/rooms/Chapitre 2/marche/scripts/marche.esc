@@ -6,6 +6,9 @@
 
 :setup
 
+play_snd res://sound/passe_tragique.wav _music
+
+
 
 
 # ":ready" runs after any events configured in setup complete. It is used to
