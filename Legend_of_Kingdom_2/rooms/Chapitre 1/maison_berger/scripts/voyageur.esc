@@ -1,4 +1,6 @@
 :look
+
+play_snd res://sound/Monologue_otis_cut.mp3 _speech
 > [eq voyageur_dialog 0]
 	say current_player "Bonjour, que faites vous chez moi ?"
 	say voyageur "Je suis venu vous annocer une grande nouvelle !"

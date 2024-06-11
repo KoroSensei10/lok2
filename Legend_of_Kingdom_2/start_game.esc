@@ -1,5 +1,8 @@
 :init
 show_menu main
 
+# When control is passed back after the logo, start the music
+play_snd res://sound/foret_chill.wav _music
+
 :newgame
 change_scene "res://rooms/intro/intro.tscn"

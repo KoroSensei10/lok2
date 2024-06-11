@@ -35,13 +35,12 @@ script = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
-visible = false
 navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
 
 [node name="lapin" parent="RoomObjects" instance=ExtResource( 7 )]
-position = Vector2( 155, 79 )
+position = Vector2( 42, 108 )
 tooltip_name = ""
 
 [node name="pierre_magique" parent="RoomObjects" instance=ExtResource( 8 )]
@@ -66,11 +65,11 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCItem"]
-position = Vector2( 304.25, 91 )
+position = Vector2( 306, 90 )
 shape = SubResource( 2 )
 
 [node name="lapin2" parent="RoomObjects" instance=ExtResource( 11 )]
-position = Vector2( 148, 102 )
+position = Vector2( 392, 67 )
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 38, 166 )
