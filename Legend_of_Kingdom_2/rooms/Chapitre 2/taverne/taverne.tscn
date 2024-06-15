@@ -60,11 +60,12 @@ position = Vector2( 144, 113 )
 esc_script = "res://rooms/Chapitre 2/taverne/scripts/gars_bourre.esc"
 tooltip_name = "Parler"
 
+[node name="breuvage" parent="RoomObjects" instance=ExtResource( 10 )]
+position = Vector2( 251, 123 )
+tooltip_name = ""
+
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 160, 90 )
 script = ExtResource( 3 )
 global_id = "taverne_start_pos"
 is_start_location = true
-
-[node name="breuvage" parent="." instance=ExtResource( 10 )]
-position = Vector2( 191, 117 )
