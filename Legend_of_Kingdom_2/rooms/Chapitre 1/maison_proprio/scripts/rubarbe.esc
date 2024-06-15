@@ -1,0 +1,31 @@
+:look
+> [eq rubarbe_nb 0]
+	inventory_add rubarbe
+	say current_player "De la rubarbe ! J'adore ça !"
+	set_global rubarbe_nb 1
+	stop
+> [eq rubarbe_nb 1]
+	inventory_add rubarbe
+	say current_player "Je raffole de tarte à la rubarbe."
+	set_global rubarbe_nb 2
+	stop
+> [eq rubarbe_nb 2]
+	inventory_add rubarbe
+	say current_player "J'affectionne tout particulièrement les tartes de ma grand-mère."
+	set_global rubarbe_nb 3
+	stop
+> [eq rubarbe_nb 3]
+	inventory_add rubarbe
+	say current_player "En y réflechissant, je me demande ce que je préfère vraiment."
+	set_global rubarbe_nb 4
+	stop
+> [eq rubarbe_nb 4]
+	inventory_add rubarbe
+	say current_player "Le sucre ou la rubarbe ?"
+	set_global rubarbe_nb 5
+	stop
+> [eq rubarbe_nb 5]
+	inventory_add rubarbe
+	say current_player "Quoi qu'il en soit, c'est délicieux !"
+	set_global rubarbe_bool true
+	stop

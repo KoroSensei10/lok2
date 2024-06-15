@@ -1,0 +1,6 @@
+:look
+say current_player "C'est fermé" [!porte_gerant]
+
+change_scene "res://rooms/Chapitre 3/foret_infini/foret_infini.tscn" [porte_gerant]
+
+	

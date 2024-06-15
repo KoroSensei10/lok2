@@ -1,0 +1,27 @@
+:look
+> [eq amaranthe_nb 0]
+	inventory_add amaranthe
+	say current_player "C'est une très belle plante."
+	set_global amaranthe_nb 1	
+	stop
+> [eq amaranthe_nb 1]
+	say current_player "Je me demande ce que c'est."
+	set_global amaranthe_nb 2
+	stop
+> [eq amaranthe_nb 2]
+	say current_player "Est-ce du chénopode ?"
+	set_global amaranthe_nb 3
+	stop
+> [eq amaranthe_nb 3]
+	say current_player "Ou du quinoa..."
+	set_global amaranthe_nb 4
+	stop
+> [eq amaranthe_nb 4]
+	say current_player "Je sais : c'est de l'amaranthe !"
+	set_global amaranthe_nb 5
+	stop
+> [eq amaranthe_nb 5]
+	say current_player "Je n'ai jamais été un grand fan de cette plante."
+	set_global amaranthe_bool true
+	stop
+	

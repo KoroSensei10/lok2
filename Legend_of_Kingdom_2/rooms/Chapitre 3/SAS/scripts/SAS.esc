@@ -1,0 +1,10 @@
+
+
+:setup
+
+
+
+:ready
+
+change_scene "res://rooms/Chapitre 3/foret_infini/foret_infini.tscn"
+

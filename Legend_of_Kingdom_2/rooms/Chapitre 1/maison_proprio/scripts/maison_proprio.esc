@@ -4,6 +4,10 @@
 > [!room_visited]
 	set_global room_visited false
 	
+	
+> [!i/rubarbe]
+	set_global rubarbe_nb 0
+	
 
 :ready
 

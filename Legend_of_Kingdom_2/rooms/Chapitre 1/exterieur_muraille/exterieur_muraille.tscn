@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
 [ext_resource path="res://assets/raw_res/backgrounds/exterieur.png" type="Texture" id=6]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+[ext_resource path="res://inventory/amaranthe.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -11, -9, 329, -12, 330, 187, -12, 190 )
@@ -46,6 +47,17 @@ animations = null
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit muraille"]
 position = Vector2( 29.5, 88.5 )
 shape = SubResource( 2 )
+
+[node name="amaranthe" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 235, 60 )
+z_index = 4
+esc_script = "res://rooms/Chapitre 1/exterieur_muraille/scripts/amaranthe.esc"
+tooltip_name = "Prendre"
+
+[node name="amaranthe3" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 264, 66 )
+z_index = 1
+tooltip_name = "Prendre"
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 160, 90 )
