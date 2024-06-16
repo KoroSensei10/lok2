@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=4]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=5]
+[ext_resource path="res://assets/raw_res/backgrounds/foret_labyrinthe4.png" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -16, -11, 342, -7, 334, 196, -26, 206 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -16, -11, 342, -7, 334, 196, -26, 206 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.5, 17 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 65, 12 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 23, 26.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 65, 11.5 )
+
+[node name="foret_infini" type="Node2D"]
+script = ExtResource( 2 )
+global_id = "foret_infini"
+esc_script = "res://rooms/Chapitre 3/foret_infini/scripts/foret_infini.esc"
+player_scene = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 6 )
+script = ExtResource( 4 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="Exit top" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 3/foret_infini/scripts/exit_top.esc"
+tooltip_name = "Tout droit"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit top"]
+position = Vector2( 161.5, 100 )
+shape = SubResource( 2 )
+
+[node name="Exit right" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 3/foret_infini/scripts/exit_right.esc"
+tooltip_name = "Droite"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit right"]
+position = Vector2( 257, 127 )
+shape = SubResource( 3 )
+
+[node name="Exit bottom" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 3/foret_infini/scripts/exit_bottom.esc"
+tooltip_name = "Derrière"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit bottom"]
+position = Vector2( 156, 154.5 )
+shape = SubResource( 4 )
+
+[node name="Exit left" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 3/foret_infini/scripts/exit_left.esc"
+tooltip_name = "Gauche"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Exit left"]
+position = Vector2( 63, 126.5 )
+shape = SubResource( 5 )
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+script = ExtResource( 3 )
+global_id = "foret_infini_start_pos"
+is_start_location = true

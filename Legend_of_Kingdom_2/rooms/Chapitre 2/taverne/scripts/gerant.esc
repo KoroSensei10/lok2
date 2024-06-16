@@ -1,0 +1,15 @@
+:look
+> [eq gerant_count 0]
+    say gerant "Ohlala j'ai vraiment besoin d'aide" 
+    say gerant "Si tu m'aides je t'ouvre chez moi"
+    say gerant "J'ai besoin de 3 fois rien pour préparer mon breuvage"
+    say gerant "Tu peux me l'amener, tu connais la recette non ?"
+    say current_player "Tu peux compter sur moi"
+    set_global gerant_count 1
+
+> [eq gerant_count 1]
+    say gerant "Il manque des ingrédients" [!ingredients_bool]
+    say gerant "Merci ! Avec ça, impossible de rater le breuvage" [ingredients_bool]
+    say gerant "J'habite la maison juste derrière" [ingredients_bool]
+    set_global porte_gerant true [ingredients_bool]
+

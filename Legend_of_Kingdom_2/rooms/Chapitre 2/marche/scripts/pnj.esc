@@ -1,0 +1,23 @@
+:look
+> [eq pnj_count 0]
+	say pnj "Vous êtes notre sauveur !"
+	say current_player "Je tacherais de ne pas vous décevoir."
+	set_global pnj_count 1
+	stop
+> [eq pnj_count 1]
+	say pnj "Vous avez vraiment fait une erreur..."
+	say current_player "De quoi parlez-vous..."
+	set_global pnj_count 2
+	stop
+> [eq pnj_count 2]
+	say pnj "C'est une catastrophe à cause de vous !"
+	say current_player "Je... je ne sais pas quoi dire."
+	set_global pnj_count 3
+	stop
+> [eq pnj_count 3]
+	say pnj "Allez-vous en !"
+	set_global pnj_count 4
+	stop
+> [eq pnj_count 4]
+	say pnj "J'ai dit de vous en allez."
+	stop

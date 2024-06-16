@@ -71,7 +71,7 @@ position = Vector2( 163, 171.5 )
 shape = SubResource( 2 )
 
 [node name="StartPos" type="Position2D" parent="."]
-position = Vector2( 222, 114 )
+position = Vector2( 295, 18 )
 script = ExtResource( 2 )
 global_id = "maison_proprio_interieur_start_pos"
 is_start_location = true

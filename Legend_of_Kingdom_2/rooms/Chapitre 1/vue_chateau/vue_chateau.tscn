@@ -36,6 +36,7 @@ navpoly = SubResource( 1 )
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/vue_chateau/scripts/chateau.esc"
+tooltip_name = "Aller au chateau"
 combine_when_selected_action_is_in = [  ]
 animations = null
 
@@ -46,6 +47,7 @@ polygon = PoolVector2Array( 282, 86, 282, 59, 289, 51, 288, 27, 279, 25, 271, 2,
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/vue_chateau/scripts/exit_marche.esc"
+tooltip_name = "Aller au chateau"
 combine_when_selected_action_is_in = [  ]
 animations = null
 

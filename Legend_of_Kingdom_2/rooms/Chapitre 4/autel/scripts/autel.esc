@@ -1,0 +1,6 @@
+:setup
+
+set_active pierre_magique false
+
+:ready
+

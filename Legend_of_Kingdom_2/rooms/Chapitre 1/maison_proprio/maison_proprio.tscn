@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
 [ext_resource path="res://assets/raw_res/backgrounds/maison_proprietaire.png" type="Texture" id=6]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+[ext_resource path="res://inventory/rubarbe.tscn" type="PackedScene" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -12, -8, 326, -10, 327, 188, -7, 187 )
@@ -38,6 +39,11 @@ navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
 
+[node name="rubarbe3" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 79, 166 )
+esc_script = "res://rooms/Chapitre 1/maison_proprio/scripts/rubarbe.esc"
+tooltip_name = "Prendre"
+
 [node name="Exit muraille" type="Area2D" parent="RoomObjects"]
 pause_mode = 1
 script = ExtResource( 7 )
@@ -54,13 +60,23 @@ shape = SubResource( 2 )
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/maison_proprio/scripts/exit_maison_proprio_interieur.esc"
-tooltip_name = "Rentrer"
+tooltip_name = "Entrer"
 combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/Porte"]
 position = Vector2( 200, 132 )
 shape = SubResource( 3 )
+
+[node name="rubarbe" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 68, 149 )
+esc_script = "res://rooms/Chapitre 1/maison_proprio/scripts/rubarbe.esc"
+tooltip_name = "Prendre"
+
+[node name="rubarbe2" parent="RoomObjects" instance=ExtResource( 8 )]
+position = Vector2( 107, 154 )
+esc_script = "res://rooms/Chapitre 1/maison_proprio/scripts/rubarbe.esc"
+tooltip_name = "Prendre"
 
 [node name="StartPos" type="Position2D" parent="."]
 position = Vector2( 160, 90 )

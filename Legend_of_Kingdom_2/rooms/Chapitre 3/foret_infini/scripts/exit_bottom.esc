@@ -1,0 +1,21 @@
+:look
+> [eq foret_number 0]
+    set_global good_choice false
+> [eq foret_number 1]
+    set_global good_choice true
+    set_global foret_number 2
+    change_scene "res://rooms/Chapitre 3/SAS/SAS.tscn"
+    stop
+> [eq foret_number 2]
+    set_global good_choice false
+> [eq foret_number 3]
+    set_global good_choice false
+> [eq foret_number 4]
+    set_global good_choice false
+> [eq foret_number 5]
+    set_global good_choice false
+> [eq foret_number 6]
+    set_global good_choice false
+> [eq foret_number 7]
+    set_global good_choice false
+change_scene "res://rooms/Chapitre 3/SAS/SAS.tscn"

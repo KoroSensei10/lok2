@@ -18,12 +18,12 @@ outlines = [ PoolVector2Array( -10, -6, 329, -5, 332, 189, -10, 187 ) ]
 size = 20
 font_data = ExtResource( 9 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 76.625, 89.125 )
-
 [sub_resource type="DynamicFont" id=4]
 size = 9
 font_data = ExtResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 76.625, 89.125 )
 
 [node name="intro" type="Node2D"]
 script = ExtResource( 3 )
@@ -65,23 +65,8 @@ margin_bottom = 123.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[center] Legend ok Kingdom 2 [/center]"
-text = " Legend ok Kingdom 2 "
-
-[node name="ESCItem" type="Area2D" parent="RoomObjects/book_intro"]
-pause_mode = 1
-visible = false
-position = Vector2( -160, -180 )
-z_index = 4
-script = ExtResource( 7 )
-esc_script = "res://rooms/intro/scripts/page_suivante.esc"
-tooltip_name = "Page suivante"
-combine_when_selected_action_is_in = [  ]
-animations = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/book_intro/ESCItem"]
-position = Vector2( 243.375, 89.875 )
-shape = SubResource( 2 )
+bbcode_text = "[center] Legend of Kingdom 2 [/center]"
+text = " Legend of Kingdom 2 "
 
 [node name="ESCItem3" type="Area2D" parent="RoomObjects/book_intro"]
 pause_mode = 1
@@ -219,3 +204,17 @@ position = Vector2( 79, 105 )
 script = ExtResource( 4 )
 global_id = "intro_start_pos"
 is_start_location = true
+
+[node name="ESCItem" type="Area2D" parent="."]
+pause_mode = 1
+priority = 2.0
+script = ExtResource( 7 )
+esc_script = "res://rooms/intro/scripts/page_suivante.esc"
+tooltip_name = "Page suivante"
+combine_when_selected_action_is_in = [  ]
+dialog_color = Color( 0, 0, 0, 1 )
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ESCItem"]
+position = Vector2( 243.375, 89.875 )
+shape = SubResource( 2 )

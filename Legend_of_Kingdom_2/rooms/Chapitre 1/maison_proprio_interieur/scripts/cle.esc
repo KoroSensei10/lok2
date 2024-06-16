@@ -1,5 +1,5 @@
 :look
 > [!i/cle]
-	say current_player "Cette forme de clé m'est similaire."
+	say current_player "Cette forme de clé m'est familière."
 	inventory_add cle
 	set_active cle false

@@ -1,0 +1,18 @@
+:look
+> [eq baie_nb 0]
+	inventory_add baie
+	say current_player "Des baies ! Quel régal !"
+	set_global baie_nb 1	
+	stop
+> [eq baie_nb 1]
+	say current_player "Ces baies sont tellement juteuses."
+	set_global baie_nb 2	
+	stop
+> [eq baie_nb 2]
+	say current_player "Rien de tel qu'une poignée de baies fraîches."
+	set_global baie_nb 3	
+	stop
+> [eq baie_nb 3]
+	say current_player "Ces baies me rappellent les cueillettes de mon enfance."
+	set_global baie_bool true
+	stop	

@@ -1,0 +1,14 @@
+:look
+> [eq tavernier_count 0]
+    say tavernier "Ohlala j'ai vraiment besoin d'aide" 
+    say tavernier "Si tu m'aides je t'ouvre chez moi"
+    say tavernier "J'ai besoin de 3 fois rien pour préparer mon breuvage"
+    say tavernier "Tu peux me l'amener, tu connais la recette non ?"
+    say current_player "Tu peux compter sur moi"
+    set_global tavernier_count 1
+
+> [eq tavernier_count 1]
+    say tavernier "Il manque des ingrédients" [!ingredients_bool]
+    say tavernier "Merci ! Avec ça, impossible de rater le breuvage" [ingredients_bool]
+    say tavernier "J'habite la maison juste derrière" [ingredients_bool]
+    set_global porte_gerant true [ingredients_bool]

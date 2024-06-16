@@ -65,7 +65,7 @@ shape = SubResource( 2 )
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/maison_berger/scripts/exit_interieur.esc"
-tooltip_name = "Rentrer"
+tooltip_name = "Entrer"
 combine_when_selected_action_is_in = [  ]
 animations = null
 
@@ -77,6 +77,7 @@ shape = SubResource( 3 )
 pause_mode = 1
 script = ExtResource( 7 )
 esc_script = "res://rooms/Chapitre 1/maison_berger/scripts/exit_foret.esc"
+tooltip_name = "Foret"
 combine_when_selected_action_is_in = [  ]
 animations = null
 

@@ -1,9 +1,16 @@
 :setup
 # Initialisation des variables globales si nécessaire
 #inventory_add cle
+
 set_global knock_count_bool false
 set_active muraille_ouverte false
 
+
+> [marche_visted]
+	set_active muraille_ouverte true
+	set_interactive serrure_avec_cle false
+	set_interactive porte false
+	
 
 > [!room1_visited]
 	set_global room1_visited false
@@ -11,6 +18,9 @@ set_active muraille_ouverte false
 	set_global exterieur_muraille_visited false
 	set_global exterieur_visited false
 	set_global knock_count 0
+
+> [!i/baie]
+	set_global baie_nb 0
 	
 > [i/cle]
 	set_interactive serrure_avec_cle true
@@ -19,6 +29,7 @@ set_active muraille_ouverte false
 > [!i/cle]
 	set_interactive serrure_avec_cle false
 	set_interactive serrure_sans_cle true
+	
 
 :ready
 # Vérifiez si la salle a été visitée et affichez le message si c'est la première fois

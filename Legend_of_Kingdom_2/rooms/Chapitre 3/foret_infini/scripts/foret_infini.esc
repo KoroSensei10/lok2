@@ -1,0 +1,22 @@
+:setup
+
+# bon chemin : droite bas droite droite haut haut gauche haut
+
+set_global foret_number 0 [!good_choice]
+
+
+
+:ready
+
+say current_player "Quelle drôle de forêt" [!foret_visited]
+
+#say current_player "Forêt {foret_number}"
+
+>[eq foret_number 0]
+    say current_player "Ça alors, je suis revenu au point de départ" [foret_visited]
+
+
+set_global foret_visited true [!foret_visited]
+
+
+

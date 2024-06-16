@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=2]
@@ -6,8 +6,12 @@
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
 [ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=5]
 [ext_resource path="res://assets/raw_res/backgrounds/marche.png" type="Texture" id=6]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -14, -9, 331, -6, 331, 188, -8, 187 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -14, -9, 331, -6, 331, 188, -8, 187 ) ]
 
 [node name="marche" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,8 +32,54 @@ navpoly = SubResource( 1 )
 
 [node name="RoomObjects" type="Node2D" parent="."]
 
+[node name="Taverne" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 2/marche/scripts/exit_taverne.esc"
+tooltip_name = "Entrer"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Taverne"]
+polygon = PoolVector2Array( 50, 104, 68, 99, 69, 160, 53, 172 )
+
+[node name="Muraille" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 2/marche/scripts/exit_muraille.esc"
+tooltip_name = "Muraille"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Muraille"]
+polygon = PoolVector2Array( 52, 178, 72, 169, 93, 170, 107, 154, 150, 152, 173, 147, 226, 138, 223, 156, 225, 177 )
+
+[node name="Foret" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+esc_script = "res://rooms/Chapitre 2/marche/scripts/exit_foret.esc"
+tooltip_name = "Entrer"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/Foret"]
+polygon = PoolVector2Array( 158, 95, 167, 93, 167, 118, 158, 121 )
+
+[node name="pnj" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 7 )
+global_id = "pnj"
+esc_script = "res://rooms/Chapitre 2/marche/scripts/pnj.esc"
+tooltip_name = " Parler"
+combine_when_selected_action_is_in = [  ]
+dialog_color = Color( 0.219608, 0.0509804, 0.964706, 1 )
+animations = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomObjects/pnj"]
+polygon = PoolVector2Array( 72, 120, 73, 103, 78, 96, 88, 100, 87, 111, 93, 134, 90, 156, 93, 163, 85, 165, 74, 166, 70, 134 )
+
 [node name="StartPos" type="Position2D" parent="."]
-position = Vector2( 160, 90 )
+position = Vector2( 300, 14 )
 script = ExtResource( 2 )
 global_id = "marche_start_pos"
 is_start_location = true

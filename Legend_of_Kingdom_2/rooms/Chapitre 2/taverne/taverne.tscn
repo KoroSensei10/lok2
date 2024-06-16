@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=1]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://assets/raw_res/backgrounds/taverne.png" type="Texture" id=5]
+[ext_resource path="res://characters/main_character/main_character.scn" type="PackedScene" id=6]
+[ext_resource path="res://characters/tavernier.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=8]
+[ext_resource path="res://characters/gars_bourre.tscn" type="PackedScene" id=9]
+[ext_resource path="res://rooms/Chapitre 2/taverne/breuvage.tscn" type="PackedScene" id=10]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -23, -17, 348, -19, 348, 194, -25, 192 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( -23, -17, 348, -19, 348, 194, -25, 192 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 108, 15 )
+
+[node name="taverne" type="Node2D"]
+script = ExtResource( 2 )
+global_id = "taverne"
+esc_script = "res://rooms/Chapitre 2/taverne/scripts/taverne.esc"
+player_scene = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+mouse_filter = 2
+texture = ExtResource( 5 )
+script = ExtResource( 1 )
+
+[node name="WalkableArea" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="WalkableArea"]
+navpoly = SubResource( 1 )
+
+[node name="RoomObjects" type="Node2D" parent="."]
+
+[node name="ESCItem" type="Area2D" parent="RoomObjects"]
+pause_mode = 1
+script = ExtResource( 8 )
+esc_script = "res://rooms/Chapitre 2/taverne/scripts/exit_marche.esc"
+tooltip_name = "Marché"
+combine_when_selected_action_is_in = [  ]
+animations = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomObjects/ESCItem"]
+position = Vector2( 214, 171 )
+shape = SubResource( 2 )
+
+[node name="tavernier" parent="RoomObjects" instance=ExtResource( 7 )]
+position = Vector2( 226, 102 )
+esc_script = "res://rooms/Chapitre 2/taverne/scripts/tavernier.esc"
+tooltip_name = "Parler"
+
+[node name="gars_bourre" parent="RoomObjects" instance=ExtResource( 9 )]
+position = Vector2( 144, 113 )
+esc_script = "res://rooms/Chapitre 2/taverne/scripts/gars_bourre.esc"
+tooltip_name = "Parler"
+
+[node name="breuvage" parent="RoomObjects" instance=ExtResource( 10 )]
+position = Vector2( 251, 123 )
+tooltip_name = ""
+
+[node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+script = ExtResource( 3 )
+global_id = "taverne_start_pos"
+is_start_location = true

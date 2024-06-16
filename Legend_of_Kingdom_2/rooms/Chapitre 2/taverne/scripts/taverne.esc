@@ -1,0 +1,11 @@
+:setup
+
+set_global tavernier_count 0 [!taverne_visited]
+set_global taverne_visited true [!taverne_visited]
+
+
+
+:ready
+
+
+
